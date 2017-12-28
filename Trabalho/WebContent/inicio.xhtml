@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />z
+		<title>Site</title>
+		
+		<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css"/>
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="Bootstrap/css/bootstrap-theme.min.css"/>
+'
+<!-- Latest compiled and minified JavaScript -->
+<script src="Bootstrap/js/bootstrap.min.js"/>
+		
+		<script src="Jquery/jquery-3.1.1.min.js"></script>
+		
+	</h:head>
+	<h:body style="background-image: url(imagens/imagem14.jpg); background-size: 100%">
+		
+		<div id="header" style="text-align: center;">
+		<h1 style="color: #87CEFF; font-family: Times New Roman;">PINGO DE CHUVA</h1> 
+		</div> 
+		
+		<div id="Conteudo" style="tex-align: center;
+		margin: 50px 200px 100px 200px;">
+		
+		<h:form>
+		
+		<h1 style="color: white; font-size: 50px">Fazer login</h1>
+		
+		<p:messages id="msgs" />
+		
+    <p:panel id="panel" style="background-color: rgba(0, 0, 0, 0)">
+ 
+        <h:panelGrid columns="7" cellpadding="5">
+            <p:outputLabel for="nome" value="Nome:" style="color: white"/>
+            <p:inputText id="nome" value="#{usar_Crud.nomeAtual}" label="Nome"
+            style="background-color: rgba(0, 0, 0, 0); color: #B5B5B5">
+                <f:validateLength minimum="2" />
+                
+            </p:inputText>
+            <p:message for="nome" display="icon" />
+ 
+            <h:outputText value="Senha: " style="color: white"/>
+        	<p:password id="nonFeedback" value="#{usar_Crud.senhaAtual}"
+        	style="background-color: rgba(0, 0, 0, 0); color: #B5B5B5" />
+ 
+ 			<p:commandButton value="Logar-se" 
+        action="#{usar_Crud.logar}" icon="ui-icon-check" 
+        style="color: black ; background-color: yellow;" update="panel"/>
+ 
+        </h:panelGrid>
+        <p:growl id="growl" showDetail="true" sticky="true" />
+ 		
+    </p:panel>
+</h:form>
+		
+		
+		<h:form style="margin-top: 40px">
+		
+		<h1 style="color: white; font-size: 50px; text-align: right">Criar conta</h1>
+		
+		<p:messages id="msgs" />
+		
+    <p:panel id="panel" style="background-color: rgba(0, 0, 0, 0);">
+ 
+        <h:panelGrid columns="1" cellpadding="5">
+            <p:outputLabel for="nome" value="Nome:" style="color: white"/>
+            <p:inputText id="nome" value="#{usar_Crud.nomeAtual}" label="Nome"
+            style="background-color: rgba(0, 0, 0, 0); color: #B5B5B5" requered="true">
+                <f:validateLength minimum="2" />
+                
+            </p:inputText>
+            <p:message for="nome" display="icon" />
+            
+            <p:outputLabel for="sobrenome" value="Sobrenome:" style="color: white"/>
+            <p:inputText id="sobrenome" value="#{usar_Crud.sobrenomeAtual}" label="Sobrenome"
+            style="background-color: rgba(0, 0, 0, 0); color: #B5B5B5" requered="true">
+                <f:validateLength minimum="2" />
+          
+            </p:inputText>
+            <p:message for="sobrenome" display="icon" />
+ 
+            <h:outputText value="Senha: " for="nonFeedback2" style="color: white"/>
+        	<p:password id="nonFeedback2" value="#{usar_Crud.senhaAtual}"
+        	style="background-color: rgba(0, 0, 0, 0); color: #B5B5B5" requered="true">
+        	</p:password>
+        	
+ 			<br/>
+ 			<p:commandButton value="Cadastrar" update="panel" 
+        action="#{usar_Crud.inserirDados}" icon="ui-icon-check" 
+        style="color: black ; background-color: yellow"/>
+        
+        </h:panelGrid>
+ 		<p:growl id="growl" showDetail="true" sticky="true" /> 
+    </p:panel>
+</h:form>
+		
+		</div>
+		
+		<script>
+		$(document).ready(function(){
+			
+		});
+		</script>		
+		
+	</h:body>
+</html>

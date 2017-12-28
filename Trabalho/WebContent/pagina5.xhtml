@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />z
+		<title>Site</title>
+		
+		<style>
+			
+			.ui-multiselectlistbox-listcontainer {
+				background-color: rgba(0, 0, 0, 0);
+			}
+		</style>
+		
+		<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css"/>
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="Bootstrap/css/bootstrap-theme.min.css"/>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="Bootstrap/js/bootstrap.min.js"/>
+		
+		<script src="Jquery/jquery-3.1.1.min.js"></script>
+		
+	</h:head>
+	<h:body style="background-image: url(imagens/imagem11.png); background-size: 100%">
+		
+		<div class="page-header">
+  		<h1 style="color: white">Dados Pessoais
+  		<small>Atualize ou corrija seus dados!</small></h1>
+		</div>
+		
+		<h:form enctype="multipart/form-data" style="margin-left: 20px">
+    	
+    	<h:graphicImage styleClass="form-control" url="/imagens/anonimo.jpg" alt="Perfil" 
+		style="width: 128px; height: 128px;" aria-describedby="addonFoto"/>
+    	
+   		<p:fileUpload mode="simple" value="#{usar_Crud.atualizarRespostas1()}" 
+       	aria-describedby="addonFoto" style="margin-left: 143px; margin-top: 42px;"/>
+
+		</h:form>		
+		   		
+        
+				
+			         
+	</h:body>
+</html>

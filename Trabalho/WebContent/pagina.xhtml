@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />z
+		<title>Site</title>
+		
+		<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css"/>
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="Bootstrap/css/bootstrap-theme.min.css"/>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="Bootstrap/js/bootstrap.min.js"/>
+		
+		<script src="Jquery/jquery-3.1.1.min.js"></script>
+		
+	</h:head>
+	<h:body style="background-image: url(imagens/imagem11.png); background-size: 100%">
+		
+		<div id="Cabeçalho">
+		
+		<nav class="navbar navbar-default navbar-fixed-top navbar navbar-inverse">
+		<div class="container" Style="margin-top: 10px; text-align: center; margin-bottom: 10px">
+			<p style="color: #FFFFFF; font-size: 20px">Pingo de chuva</p>
+		</div>
+		
+		<ul class="nav nav-pills">
+			<li role="presentation" class="active"><a href="pagina2.xhtml" target="pagina" id="p1">Página inicial</a></li>
+			<li role="presentation"><a href="pagina3.xhtml" target="pagina" id="p2">Questionário</a></li>
+			<li role="presentation"><a href="pagina4.xhtml" target="pagina" id="p3">Minhas respostas</a></li>
+			<li role="presentation"><a href="pagina5.xhtml" target="pagina" id="p4">Privacidade</a></li>
+			<li role="presentation" style="margin-left: 700px">
+			<h5 style="color: #00CED1">Olá: <h:outputText value="#{usar_Crud.nomeAtual} " style="color: #00FF7F"/>
+			<h:outputText value="#{usar_Crud.sobrenomeAtual} " style="color: #00FF7F"/></h5>
+			</li>
+		</ul>
+		
+
+		
+	</nav>
+		</div>
+		
+		<div class="col-xs-12 col-md-12" style="margin-top: 90px">
+		
+			<iframe id="frame" src="pagina2.xhtml" style="width: 100%; height: 510px; border: 0px;" name="pagina" scrolling="no">
+			</iframe>
+	</div>
+		
+		<script>
+				$(document).ready(function(){
+					$("#p1").click(function(){
+						
+						$("#frame").hide();
+						$("#frame").fadeIn(2000).attr("src","pagina.xhtml");
+						$("#frame").attr("scrolling", "yes");
+					
+					});
+					
+					$("#p2").click(function(){
+					
+						$("#frame").hide();
+						$("#frame").fadeIn(2000).attr("src","pagina2.xhtml");
+						$("#frame").attr("scrolling", "yes");
+					});
+					
+					$("#p3").click(function(){
+					
+						$("#frame").hide();
+						$("#frame").fadeIn(2000).attr("src","pagina3.xhtml");
+						$("#frame").attr("scrolling", "yes");
+					
+					});
+					
+					$("#p4").click(function(){
+						
+						$("#frame").hide();
+						$("#frame").fadeIn(2000).attr("src","pagina5.xhtml");
+						$("#frame").attr("scrolling", "yes");
+					
+					});
+					
+				});
+	</script>
+		
+	</h:body>
+</html>

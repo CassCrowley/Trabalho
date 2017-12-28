@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />z
+		<title>Site</title>
+		
+		<style>
+			
+			.ui-multiselectlistbox-listcontainer {
+				background-color: rgba(0, 0, 0, 0);
+			}
+		</style>
+		
+		<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css"/>
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="Bootstrap/css/bootstrap-theme.min.css"/>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="Bootstrap/js/bootstrap.min.js"/>
+		
+		<script src="Jquery/jquery-3.1.1.min.js"></script>
+		
+	</h:head>
+	<h:body style="background-image: url(imagens/imagem11.png); background-size: 100%">
+		
+		<div class="page-header">
+  		<h1 style="color: white">Questionário!
+  		<small>Responda o nosso questionário</small></h1>
+		</div>
+		
+		
+		<h:form style="margin-left: 20px">
+				
+				<br/><br/><br/><br/>
+				
+				<p:outputLabel for="palavra" value="Digite uma palavra que vem a sua mente:" 
+				style="color: white; font-size:30px"/>
+            	<p:inputText id="palavra" value="#{usar_Crud.respostas1}" label="hehe"
+            	style="background-color: rgba(0, 0, 0, 0); color: #B5B5B5">
+            	</p:inputText>
+            	<p:commandButton value="Atualizar resposta" id="ajax1" 
+    			update="growl" styleClass="ui-priority-primary"
+    			actionListener="#{usar_Crud.atualizarRespostas1()}" style="margin-left: 10px"/>
+            	
+            	
+            	<br/><br/>
+            	
+            	<p:outputLabel for="cor" value="Cor preferida: " style="color: white;
+            	font-size:30px"/>
+            	<p:inputText id="cor" value="#{usar_Crud.respostas2}" label="haha"
+            	style="background-color: rgba(0, 0, 0, 0); color: #B5B5B5">
+            	</p:inputText>
+            	<p:commandButton value="Atualizar resposta" id="ajax2" 
+    			update="growl" styleClass="ui-priority-primary"
+    			actionListener="#{usar_Crud.atualizarRespostas2()}" style="margin-left: 10px"/>
+            	
+            	<br/><br/>
+            	
+            	<p:outputLabel for="fruta" value="Fruta favorita:" style="color: white;
+            	font-size:30px"/>
+            	<p:inputText id="fruta" value="#{usar_Crud.respostas3}" label="hihi"
+            	style="background-color: rgba(0, 0, 0, 0); color: #B5B5B5">
+            	</p:inputText>
+				<p:commandButton value="Atualizar resposta" id="ajax3" 
+    			update="growl" styleClass="ui-priority-primary"
+    			actionListener="#{usar_Crud.atualizarRespostas3()}" style="margin-left: 10px"/>
+				
+				<br/><br/>				
+				
+    			<p:growl id="growl" life="4000" />
+     
+    			<p:commandButton value="Enviar resposta" id="ajax" 
+    			update="growl" styleClass="ui-priority-primary"
+    			actionListener="#{usar_Crud.inserirRespostas()}" />
+    			<p:commandButton value="Excluir respostas" id="ajax4" 
+    			update="growl" styleClass="ui-priority-primary"
+    			actionListener="#{usar_Crud.excluirRespostas()}" style="margin-left: 10px"/>
+   
+           		<p:messages id="msgs" />
+        
+         </h:form>
+				
+			         
+	</h:body>
+</html>
